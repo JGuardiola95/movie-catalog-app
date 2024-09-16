@@ -19,6 +19,14 @@ export const MovieCard = ({ movie }: Props) => {
   const posterUrl = getPosterUrl(poster_path);
   const isFavorite = favorites.some((favMovie) => favMovie.id === movie.id);
 
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      removeFavorite(movie.id);
+    } else {
+      addFavorite(movie);
+    }
+  };
+
   return (
     <Card className={styles.card} header={<CardHeader titleText={title} subtitleText={release_date} />}>
       <div className={styles.cardContent}>
@@ -30,17 +38,7 @@ export const MovieCard = ({ movie }: Props) => {
         </div>
         <div className={styles.cardFooter}>
           <div className={styles.rating}>Rating: {getRoundedRating(vote_average)}</div>
-          <Icon
-            name={isFavorite ? 'heart' : 'heart-2'}
-            className={styles.favoriteIcon}
-            onClick={() => {
-              if (isFavorite) {
-                removeFavorite(movie.id);
-              } else {
-                addFavorite(movie);
-              }
-            }}
-          />
+          <Icon name={isFavorite ? 'heart' : 'heart-2'} className={styles.favoriteIcon} onClick={toggleFavorite} />
         </div>
       </div>
     </Card>
