@@ -1,0 +1,21 @@
+.favoriteIcon {
+  color: var(--favorite-red);
+  cursor: pointer;
+}
+
+.listItem {
+  height: 150px;
+}
+
+.listItemContent {
+  width: 100%;
+  gap: 1rem;
+}
+
+.listItemDetails {
+  width: 100%;
+}
+
+.poster {
+  width: 80px;
+}
