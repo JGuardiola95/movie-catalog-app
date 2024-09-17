@@ -1,3 +1,9 @@
 .appShell {
   padding: 20px;
 }
+
+.startContent {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}

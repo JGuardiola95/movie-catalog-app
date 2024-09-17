@@ -1,7 +1,7 @@
 import navBackIcon from '@ui5/webcomponents-icons/dist/nav-back.js';
 import HeartIcon from '@ui5/webcomponents-icons/dist/heart.js';
 import { usePathname, useRouter } from 'next/navigation';
-import { Avatar, Button, ShellBar, ShellBarItem, Title, ThemeProvider } from '@ui5/webcomponents-react';
+import { Avatar, Button, ThemeProvider, Bar } from '@ui5/webcomponents-react';
 import { ReactNode } from 'react';
 
 import styles from './AppShell.module.css';
@@ -14,30 +14,31 @@ export const AppShell = ({ children }: AppShellProps) => {
   const router = useRouter();
   const pathname = usePathname();
 
+  const handleBackClick = () => {
+    router.back();
+  };
+
+  const handleFavoritesClick = () => {
+    router.push('/favorites');
+  };
+
   return (
     <ThemeProvider staticCssInjected>
-      <ShellBar
-        logo={<Avatar initials="JG" size="XS" />}
-        primaryTitle="José Guardiola Coding Challenge : Movie Catalog App"
-        startButton={
-          pathname !== '/' && (
-            <Button
-              icon={navBackIcon}
-              onClick={() => {
-                router.back();
-              }}
-            />
-          )
+      <Bar
+        design="Header"
+        startContent={
+          <div className={styles.startContent}>
+            {pathname !== '/' && <Button icon={navBackIcon} onClick={handleBackClick} />}
+            <Avatar initials="JG" size="XS" />
+            <strong>José Guardiola Coding Challenge : Movie Catalog App</strong>
+          </div>
         }
-      >
-        <ShellBarItem
-          icon={HeartIcon}
-          text="My Favorites"
-          onClick={() => {
-            router.push('/favorites');
-          }}
-        />
-      </ShellBar>
+        endContent={
+          <Button icon={HeartIcon} design="Transparent" onClick={handleFavoritesClick}>
+            My favorites
+          </Button>
+        }
+      ></Bar>
       <div className={styles.appShell}>{children}</div>
     </ThemeProvider>
   );
