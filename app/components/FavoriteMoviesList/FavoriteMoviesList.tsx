@@ -10,6 +10,13 @@ import { EmptyStateMessage } from '../EmptyStateMessage';
 export const FavoriteMoviesList = () => {
   const { favorites, removeFavorite } = useStore();
 
+  const handleRemoveFavorite = useCallback(
+    (movieId: number) => {
+      removeFavorite(movieId);
+    },
+    [removeFavorite]
+  );
+
   if (!favorites || favorites.length === 0) {
     return (
       <EmptyStateMessage
@@ -18,13 +25,6 @@ export const FavoriteMoviesList = () => {
       />
     );
   }
-
-  const handleRemoveFavorite = useCallback(
-    (movieId: number) => {
-      removeFavorite(movieId);
-    },
-    [removeFavorite]
-  );
 
   return (
     <List headerText="My Favorites" selectionMode="None">

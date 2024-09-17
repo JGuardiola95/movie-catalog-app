@@ -33,3 +33,5 @@ export const FavoriteMovieListItem = memo(({ movie, onRemoveFavorite }: Favorite
     </ListItemCustom>
   );
 });
+
+FavoriteMovieListItem.displayName = 'FavoriteMovieListItem';
