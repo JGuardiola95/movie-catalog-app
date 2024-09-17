@@ -27,14 +27,7 @@ export const MovieFilters = () => {
         maxDate={currentYear}
         onChange={handleYearOnChange}
       />
-      <Input
-        type="Text"
-        placeholder="Search movies..."
-        onChange={handleQueryOnChange}
-        style={{
-          flexGrow: 1,
-        }}
-      />
+      <Input type="Text" placeholder="Search movies..." onChange={handleQueryOnChange} className={styles.searchInput} />
     </div>
   );
 };
