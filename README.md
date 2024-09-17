@@ -1,6 +1,6 @@
 # Movie-Catalog App
 
-This project is a Movie-Catalog application built using Next.js and SAP UI5 Web Components. It allows users to view top-rated movies, search for movies, and manage a favorites list.
+This project is a Movie-Catalog application built using Next.js and SAP UI5 Web Components. It was started using the Next.js template from SAP UI5 Web Components. It allows users to view top-rated movies, search for movies, and manage a favorites list.
 
 ## Features
 
@@ -85,3 +85,8 @@ This project is a Movie-Catalog application built using Next.js and SAP UI5 Web 
 - Add unit and integration tests for increased reliability.
 - Integrate a database to safely persist user data, providing a more robust and scalable solution compared to localStorage.
 - Set up and implement Cypress for end-to-end testing, ensuring the application functions correctly from a user's perspective across different scenarios and interactions.
+
+## Preview
+
+![home](/public/home.png)
+![favorites](/public/favorites.png)
