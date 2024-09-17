@@ -12,6 +12,7 @@ export const MovieFilters = () => {
 
   const handleYearOnChange = (event: Ui5CustomEvent<DatePickerDomRef, DatePickerChangeEventDetail>) => {
     setReleaseYear(event.detail.value);
+    setQuery('');
   };
 
   const handleQueryOnChange = (event: Ui5CustomEvent<InputDomRef>) => {
@@ -27,7 +28,13 @@ export const MovieFilters = () => {
         maxDate={currentYear}
         onChange={handleYearOnChange}
       />
-      <Input type="Text" placeholder="Search movies..." onChange={handleQueryOnChange} className={styles.searchInput} />
+      <Input
+        type="Text"
+        value={query}
+        placeholder="Search movies..."
+        onChange={handleQueryOnChange}
+        className={styles.searchInput}
+      />
     </div>
   );
 };
