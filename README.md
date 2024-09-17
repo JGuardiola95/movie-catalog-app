@@ -88,5 +88,7 @@ This project is a Movie-Catalog application built using Next.js and SAP UI5 Web 
 
 ## Preview
 
+You can also see the live application here: [Movie Catalog](https://movie-catalog-qqgbif84q-jguardiola95s-projects.vercel.app/)
+
 ![home](/public/home.png)
 ![favorites](/public/favorites.png)
